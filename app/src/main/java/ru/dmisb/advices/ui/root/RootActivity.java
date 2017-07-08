@@ -12,7 +12,7 @@ import ru.dmisb.advices.databinding.ActivityRootBinding;
 public class RootActivity extends AppCompatActivity {
 
     private ActivityRootBinding viewDataBinding;
-    private RootPagerAdapter adapter = new RootPagerAdapter();
+    private final RootPagerAdapter adapter = new RootPagerAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class RootActivity extends AppCompatActivity {
         initAdapter();
     }
 
-    void initToolbar() {
+    private void initToolbar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null)
             actionBar.hide();

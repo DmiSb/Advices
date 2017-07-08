@@ -22,7 +22,7 @@ public class FavoritesView
         extends BaseView<FavoritesPresenter, ScreenFavoritesBinding>
         implements IFavoritesView, ListChangedListener {
 
-    private FavoritesAdapter adapter = new FavoritesAdapter();
+    private final FavoritesAdapter adapter = new FavoritesAdapter();
     private ItemTouchHelper itemTouchHelper;
 
     public FavoritesView(Context context, @Nullable AttributeSet attrs) {
@@ -61,7 +61,7 @@ public class FavoritesView
         itemTouchHelper.attachToRecyclerView(viewDataBinding.favoritesList);
     }
 
-    ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(getContext()) {
+    private final ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(getContext()) {
         @Override
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
             int position = viewHolder.getAdapterPosition();

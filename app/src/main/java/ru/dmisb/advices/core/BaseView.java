@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 public abstract class BaseView<P extends BasePresenter, B extends ViewDataBinding>
         extends LinearLayout {
 
-    protected P presenter;
+    protected final P presenter;
     protected B viewDataBinding;
 
     public BaseView(Context context, @Nullable AttributeSet attrs) {

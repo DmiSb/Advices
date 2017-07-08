@@ -19,7 +19,7 @@ public class PreferencesManager {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public AdviceDto getAdviceById(String id) {
+    private AdviceDto getAdviceById(String id) {
         String text = sharedPreferences.getString(ADVICE_KEY + id, "");
         if (!text.isEmpty())
             return new AdviceDto(id, text);

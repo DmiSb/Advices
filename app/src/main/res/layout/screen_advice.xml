@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/size_16"
-            android:src="@drawable/bed_advice"/>
+            android:src="@drawable/bed_advice"
+            tools:ignore="ContentDescription"/>
 
         <LinearLayout
             style="@style/CustomFullWidth"

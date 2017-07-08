@@ -15,12 +15,12 @@ import java.net.URL;
 import ru.dmisb.advices.data.dto.AdviceDto;
 import ru.dmisb.advices.utils.AppConfig;
 
-public class HttpPostAsyncTask extends AsyncTask<Void, Void, String> {
+class HttpPostAsyncTask extends AsyncTask<Void, Void, String> {
 
-    private String urlSpec;
-    private AdviceCallback callback;
+    private final String urlSpec;
+    private final AdviceCallback callback;
 
-    public HttpPostAsyncTask(String urlSpec, AdviceCallback callback) {
+    HttpPostAsyncTask(String urlSpec, AdviceCallback callback) {
         this.urlSpec = urlSpec;
         this.callback = callback;
     }
@@ -40,7 +40,7 @@ public class HttpPostAsyncTask extends AsyncTask<Void, Void, String> {
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException(connection.getResponseMessage() + ": with " + urlSpec);
             }
-            int bytesRead = 0;
+            int bytesRead;
             byte[] buffer = new byte[1024];
             while ((bytesRead = in.read(buffer)) > 0) {
                 out.write(buffer, 0, bytesRead);
@@ -60,7 +60,7 @@ public class HttpPostAsyncTask extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        JSONObject reader = null;
+        JSONObject reader;
         try {
             reader = new JSONObject(s);
             String text = reader.getString("text");

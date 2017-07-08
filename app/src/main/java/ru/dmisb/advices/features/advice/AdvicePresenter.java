@@ -13,7 +13,7 @@ class AdvicePresenter
         implements IAdvicePresenter, AdviceCallback {
 
     private static AdvicePresenter instance = null;
-    private AdviceViewModel viewModel = new AdviceViewModel();
+    private final AdviceViewModel viewModel = new AdviceViewModel();
     private Timer timer = null;
     private RefreshTimerTask refreshTask = null;
 

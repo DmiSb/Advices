@@ -12,9 +12,9 @@ import ru.dmisb.advices.ui.helpers.ListChangedListener;
 
 public class Repository {
     private static Repository instance;
-    private PreferencesManager preferencesManager;
-    private RestService restService;
-    private List<AdviceDto> adviceList;
+    private final PreferencesManager preferencesManager;
+    private final RestService restService;
+    private final List<AdviceDto> adviceList;
     private ListChangedListener listener;
 
     public Repository(Context context) {

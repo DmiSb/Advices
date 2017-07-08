@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import ru.dmisb.advices.R;
 
-public class RootPagerAdapter extends PagerAdapter {
+class RootPagerAdapter extends PagerAdapter {
 
     private String[] titles;
 

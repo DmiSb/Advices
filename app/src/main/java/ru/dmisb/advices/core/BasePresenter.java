@@ -4,18 +4,18 @@ import ru.dmisb.advices.data.Repository;
 
 public abstract class BasePresenter<V extends BaseView> {
 
-    protected V view;
-    protected Repository repository;
+    private V view;
+    protected final Repository repository;
 
-    public BasePresenter() {
+    protected BasePresenter() {
         repository = Repository.getInstance();
     }
 
-    protected void takeView(V view) {
+    void takeView(V view) {
         this.view = view;
     }
 
-    protected void dropView() {
+    void dropView() {
         view = null;
     }
 

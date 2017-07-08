@@ -53,7 +53,7 @@ class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesHo
     }
 
     class FavoritesHolder extends RecyclerView.ViewHolder {
-        ScreenFavoritesItemBinding viewDataBinding;
+        final ScreenFavoritesItemBinding viewDataBinding;
 
         FavoritesHolder(View itemView) {
             super(itemView);
