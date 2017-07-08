@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.advices.features.advice.AdviceViewModel"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/CustomFullWidth"
+        android:padding="@dimen/size_16">
+
+        <TextView
+            style="@style/CustomFullWidth"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16"
+            android:text="@{model.text}"
+            tools:text="Совет"/>
+
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.advices.features.advice.AdviceViewModel"/>
+    </data>
+
+    <ru.dmisb.advices.features.advice.AdviceView
+        style="@style/CustomFullExpand"
+        android:orientation="vertical"
+        android:padding="@dimen/size_32">
+
+        <TextView
+            android:id="@+id/advice_text"
+            style="@style/AdviceText"
+            android:text="@{model.text}"
+            tools:text="Совет"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_16"
+            android:src="@drawable/bed_advice"/>
+
+        <LinearLayout
+            style="@style/CustomFullWidth"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/advice_refresh"
+                style="@style/AdviceButton"
+                android:theme="@style/CustomButton"
+                android:text="@string/advice_refresh"/>
+
+            <Button
+                android:id="@+id/advice_to_favorites"
+                style="@style/AdviceButton"
+                android:theme="@style/CustomButton"
+                android:text="@string/advice_to_favorites"/>
+
+        </LinearLayout>
+
+    </ru.dmisb.advices.features.advice.AdviceView>
+
+
+</layout>
+

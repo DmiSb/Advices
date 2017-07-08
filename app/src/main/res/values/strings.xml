@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Advices</string>
+    <string name="advice_refresh">Обновить</string>
+    <string name="advice_to_favorites">В избранное</string>
+
+    <string-array name="screen_titles">
+        <item>Совет</item>
+        <item>Избранное</item>
+    </string-array>
+    
+    <string name="favorites_remove_title">Удаление</string>
+    <string name="favorites_remove_message">Удалить совет ?</string>
+
+    <string name="yes_caption">Да</string>
+    <string name="cancel_caption">Отмена</string>
+</resources>

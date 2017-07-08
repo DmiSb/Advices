@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ru.dmisb.advices.features.favorits.FavoritesView
+        style="@style/CustomFullExpand"
+        android:orientation="vertical"
+        android:padding="@dimen/size_16">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/favorites_list"
+            style="@style/CustomFullExpand"/>
+
+    </ru.dmisb.advices.features.favorits.FavoritesView>
+
+</layout>
