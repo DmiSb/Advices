@@ -12,7 +12,7 @@ public class AppConfig {
 
     //region ================= Advice config =================
 
-    public static final int REPEAT_TIMEOUT = 10000;
+    public static final int REPEAT_TIMEOUT = 30000;
 
     //endregion
 }
