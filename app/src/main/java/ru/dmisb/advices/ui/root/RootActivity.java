@@ -1,10 +1,9 @@
 package ru.dmisb.advices.ui.root;
 
 import android.databinding.DataBindingUtil;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v7.app.AppCompatActivity;
 
 import ru.dmisb.advices.R;
 import ru.dmisb.advices.databinding.ActivityRootBinding;
@@ -19,14 +18,7 @@ public class RootActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_root);
 
-        initToolbar();
         initAdapter();
-    }
-
-    private void initToolbar() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
-            actionBar.hide();
     }
 
     private void initAdapter() {

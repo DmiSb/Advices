@@ -15,7 +15,7 @@ import ru.dmisb.advices.features.advice.AdviceViewModel;
 
 class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesHolder>{
 
-    private List<AdviceDto> adviceList;
+    private List<AdviceDto> adviceList = null;
 
     @Override
     public FavoritesHolder onCreateViewHolder(ViewGroup parent, int viewType) {

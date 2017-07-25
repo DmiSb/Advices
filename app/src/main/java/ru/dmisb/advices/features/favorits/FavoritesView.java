@@ -22,11 +22,12 @@ public class FavoritesView
         extends BaseView<FavoritesPresenter, ScreenFavoritesBinding>
         implements IFavoritesView, ListChangedListener {
 
-    private final FavoritesAdapter adapter = new FavoritesAdapter();
+    private final FavoritesAdapter adapter;
     private ItemTouchHelper itemTouchHelper;
 
     public FavoritesView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        adapter = new FavoritesAdapter();
     }
 
     //region ================= IFavoritesView =================
@@ -35,7 +36,6 @@ public class FavoritesView
     public void setAdviceList(List<AdviceDto> adviceList) {
         adapter.setAdviceList(adviceList);
     }
-
 
     //endregion
 

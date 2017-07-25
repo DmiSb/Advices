@@ -3,9 +3,9 @@ package ru.dmisb.advices.features.advice;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import ru.dmisb.advices.data.network.AdviceCallback;
 import ru.dmisb.advices.core.BasePresenter;
 import ru.dmisb.advices.data.dto.AdviceDto;
+import ru.dmisb.advices.data.network.AdviceCallback;
 import ru.dmisb.advices.utils.AppConfig;
 
 class AdvicePresenter
@@ -13,11 +13,12 @@ class AdvicePresenter
         implements IAdvicePresenter, AdviceCallback {
 
     private static AdvicePresenter instance = null;
-    private final AdviceViewModel viewModel = new AdviceViewModel();
+    private final AdviceViewModel viewModel;
     private Timer timer = null;
     private RefreshTimerTask refreshTask = null;
 
     private AdvicePresenter() {
+        viewModel = new AdviceViewModel();
         initView();
     }
 

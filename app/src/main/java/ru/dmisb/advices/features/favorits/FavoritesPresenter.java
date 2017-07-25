@@ -9,7 +9,7 @@ class FavoritesPresenter
 
     private static FavoritesPresenter instance = null;
 
-    public static FavoritesPresenter getInstance() {
+    static FavoritesPresenter getInstance() {
         if (instance == null)
             instance = new FavoritesPresenter();
         return instance;

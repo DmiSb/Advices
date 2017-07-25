@@ -1,11 +1,12 @@
 package ru.dmisb.advices.core;
 
+import ru.dmisb.advices.data.IRepository;
 import ru.dmisb.advices.data.Repository;
 
 public abstract class BasePresenter<V extends BaseView> {
 
     private V view;
-    protected final Repository repository;
+    protected final IRepository repository;
 
     protected BasePresenter() {
         repository = Repository.getInstance();
