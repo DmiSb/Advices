@@ -4,18 +4,20 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
 
 public abstract class BaseView<P extends BasePresenter, B extends ViewDataBinding>
-        extends LinearLayout {
+        extends ConstraintLayout {
 
-    protected final P presenter;
+    protected P presenter;
     protected B viewDataBinding;
 
     public BaseView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        presenter = initPresenter();
+        if (!isInEditMode()){
+            presenter = initPresenter();
+        }
     }
 
     protected abstract P initPresenter();
@@ -32,6 +34,7 @@ public abstract class BaseView<P extends BasePresenter, B extends ViewDataBindin
     protected abstract void initView();
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (!isInEditMode()){

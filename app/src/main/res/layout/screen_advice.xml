@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -18,32 +19,31 @@
             android:id="@+id/advice_text"
             style="@style/AdviceText"
             android:text="@{model.text}"
+            app:layout_constraintBottom_toTopOf="@+id/advice_img"
             tools:text="Совет"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/size_16"
+            android:id="@+id/advice_img"
+            style="@style/AdviceImage"
             android:src="@drawable/bed_advice"
-            tools:ignore="ContentDescription"/>
+            tools:ignore="ContentDescription"
+            app:layout_constraintBottom_toTopOf="@+id/advice_refresh"/>
 
-        <LinearLayout
-            style="@style/CustomFullWidth"
-            android:orientation="horizontal">
+        <Button
+            android:id="@+id/advice_refresh"
+            style="@style/AdviceButton"
+            android:theme="@style/CustomButton"
+            android:text="@string/advice_refresh"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/advice_to_favorites"/>
 
-            <Button
-                android:id="@+id/advice_refresh"
-                style="@style/AdviceButton"
-                android:theme="@style/CustomButton"
-                android:text="@string/advice_refresh"/>
-
-            <Button
-                android:id="@+id/advice_to_favorites"
-                style="@style/AdviceButton"
-                android:theme="@style/CustomButton"
-                android:text="@string/advice_to_favorites"/>
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/advice_to_favorites"
+            style="@style/AdviceButton"
+            android:theme="@style/CustomButton"
+            android:text="@string/advice_to_favorites"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/advice_refresh"/>
 
     </ru.dmisb.advices.features.advice.AdviceView>
 
